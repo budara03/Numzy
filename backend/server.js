@@ -1,5 +1,8 @@
 const express = require("express");
 const cors = require("cors");
+require("dotenv").config();
+
+const gameRoutes = require("./routes/gameRoutes");
 
 const app = express();
 
@@ -8,12 +11,15 @@ app.use(express.json());
 
 app.get("/", (req, res) => {
   res.json({
-    message: "Numzy Backend is running!"
+    success: true,
+    message: "🎯 Numzy Backend is running!"
   });
 });
 
-const PORT = 5000;
+app.use("/api/games", gameRoutes);
+
+const PORT = process.env.PORT || 5000;
 
 app.listen(PORT, () => {
-  console.log(`Numzy Backend running on http://localhost:${PORT}`);
+  console.log(`🎯 Numzy Backend running on port ${PORT}`);
 });
