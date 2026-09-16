@@ -12,7 +12,7 @@ app.use(express.json());
 app.get("/", (req, res) => {
   res.json({
     success: true,
-    message: "🎯 Numzy Backend is running!"
+    message: "Numzy Backend is running!"
   });
 });
 
@@ -21,5 +21,5 @@ app.use("/api/games", gameRoutes);
 const PORT = process.env.PORT || 5000;
 
 app.listen(PORT, () => {
-  console.log(`🎯 Numzy Backend running on port ${PORT}`);
+  console.log(`Numzy Backend running on port ${PORT}`);
 });
