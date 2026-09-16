@@ -142,3 +142,9 @@ button:hover {
 .new-game:hover {
   background: #30314a;
 }
+
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
